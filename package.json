@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/VitorGouveia/navegadorElectron/issues"
   },
-  "homepage": "https://github.com/VitorGouveia/navegadorElectron#readme"
+  "homepage": "https://github.com/VitorGouveia/navegadorElectron#readme",
+  "dependencies": {
+    "electron": "^11.1.0"
+  }
 }
