@@ -1,28 +1,23 @@
-# Navegador Electron
-
+## **Navegador Electron**
 ### Esse app electron pode ser usado para aumentar a sua eficiência enquanto programa, ele pode mostrar em uma pequena tela o que você está desenvolvimento e atualiza automaticamente
 
----
+<hr />
 
-- **INSTALAÇÃO DO ELECTRON**
-    - **npm i electron**
-- **CUSTOMIZAÇÃO DO APP**
+<details>
+  <summary>Instalação do Electron</summary>
+        npm i electron
+</details>
 
-    ## Configuração de rotas
+<details>
+  <summary>Customização do app</summary>
+        acessar url.js para configurar suas rotas
+        <br>index.js, linha 18, coloque url.{rota}, exemplo:
+        <br><img src="./src/codeRotas.png">
+        <br>Caso precise reposicionar a janela, modifique a linha 8, como o exemplo abaixo:
+        <br><img src="./src/codePosition.png">
+</details>
 
-    - **acessar url.js para configurar suas rotas**
-    - **index.js, linha 18, coloque url.{rota}, exemplo:**
-
-        ![/src/codeRotas.png](/src/codeRotas.png)
-
-    ### Caso precise reposicionar a janela, modifique a linha 8, como o exemplo abaixo:
-
-    ![/src/codePosition.png](/src/codePosition.png)
-
-- **INICIALIZAÇÃO DO APP**
-
-    ### Digite no console, "npm start"
-
----
-
-[VitorGouveia/navegadorElectron](https://github.com/VitorGouveia/navegadorElectron)
+<details>
+    <summary>Inicialização do app</summary>
+    Digite no console, "npm start"
+</details>
