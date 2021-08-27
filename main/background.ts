@@ -16,6 +16,8 @@ if (isProd) {
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
+    x: 810,
+    y: 0,
     autoHideMenuBar: true,
     alwaysOnTop: true
   });

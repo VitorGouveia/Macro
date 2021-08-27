@@ -8,10 +8,6 @@ const Home: FC = (): JSX.Element => {
 
   const isReadytoShowUrl = showUrl === true && !!url === true
 
-  // console.log(url)
-  // console.log(showUrl)
-  console.log(isReadytoShowUrl)
-
   return (
     <>
       <main className="w-screen h-screen bg-gray-900 flex justify-center">
