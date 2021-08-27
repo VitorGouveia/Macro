@@ -17,7 +17,21 @@ if (isProd) {
     width: 1000,
     height: 600,
     autoHideMenuBar: true,
+    alwaysOnTop: true
   });
+
+  mainWindow.webContents.session.webRequest.onHeadersReceived(
+    { urls: ['*://*/*'] },
+    ({ responseHeaders }, callback) => {
+      if (responseHeaders!['X-Frame-Options']) {
+        delete responseHeaders!['X-Frame-Options'];
+      } else if (responseHeaders!['x-frame-options']) {
+        delete responseHeaders!['x-frame-options'];
+      }
+
+      callback({ cancel: false, responseHeaders });
+    }
+  );
 
   if (isProd) {
     await mainWindow.loadURL('app://./index.html');

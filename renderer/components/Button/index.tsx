@@ -5,9 +5,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className: string
 }
 
-export const Button: FC<ButtonProps> = ({ children, className }) => {
+export const Button: FC<ButtonProps> = ({ children, className, ...rest }) => {
   return (
-    <button className={`px-4 py-2 bg-indigo-700 text-gray-50 rounded-md ${className}`}>
+    <button {...rest} className={`px-4 py-2 bg-indigo-700 text-gray-50 rounded-md ${className}`}>
       {children}
     </button>
   )
