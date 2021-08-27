@@ -1,23 +1,38 @@
-## **Navegador Electron**
-### Esse app electron pode ser usado para aumentar a sua eficiência enquanto programa, ele pode mostrar em uma pequena tela o que você está desenvolvimento e atualiza automaticamente
+<p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
 
-<hr />
+## Usage
 
-<details>
-  <summary>Instalação do Electron</summary>
-        npm i electron
-</details>
+### Create an App
 
-<details>
-  <summary>Customização do app</summary>
-        acessar url.js para configurar suas rotas
-        <br>index.js, linha 18, coloque url.{rota}, exemplo:
-        <br><img src="./src/codeRotas.png">
-        <br>Caso precise reposicionar a janela, modifique a linha 8, como o exemplo abaixo:
-        <br><img src="./src/codePosition.png">
-</details>
+```
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-tailwindcss
 
-<details>
-    <summary>Inicialização do app</summary>
-    Digite no console, "npm start"
-</details>
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-tailwindcss
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
+```
+
+### Install Dependencies
+
+```
+$ cd my-app
+
+# using yarn or npm
+$ yarn (or `npm install`)
+
+# using pnpm
+$ pnpm install --shamefully-hoist
+```
+
+### Use it
+
+```
+# development mode
+$ yarn dev (or `npm run dev` or `pnpm run dev`)
+
+# production build
+$ yarn build (or `npm run build` or `pnpm run build`)
+```
