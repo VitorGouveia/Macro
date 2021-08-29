@@ -1,6 +1,5 @@
 import { FC, FormEvent, useState } from 'react';
 import isElectron from "is-electron"
-import { useRouter } from "next/router"
 import { Button } from "../components/Button"
 
 import android from "../android.png"
@@ -9,8 +8,7 @@ import ios from "../ios.png"
 const Home: FC = (): JSX.Element => {
   const [url, setUrl] = useState("")
   const [showUrl, setShowUrl] = useState(false)
-
-  const isReadytoShowUrl = showUrl === true && !!url === true
+  const [isReadytoShowUrl, setIsReadytoShowUrl] = useState(false)
 
   const handleForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -19,18 +17,20 @@ const Home: FC = (): JSX.Element => {
     const ios = event.target[1].checked
     const none = event.target[2].checked
 
-    let url = ""
+    let appUrl = ""
     if(android) {
-      url = "/devices/android"
+      appUrl = `/devices/android?url=${url}`
     } else if(ios) {
-      url = "/devices/ios"
-    } else {}
+      appUrl = `/devices/ios?url=${url}`
+    } else {
+      setIsReadytoShowUrl(showUrl === true && !!url === true)
+    }
 
     if(!!url === true && isElectron()) {
       const ipcRenderer = window.require("electron").ipcRenderer
   
       ipcRenderer.send("renderApp", {
-        deviceUrl: url
+        deviceUrl: appUrl
       })
     }
   }
@@ -57,7 +57,7 @@ const Home: FC = (): JSX.Element => {
                 <li className="flex flex-col items-center">
                   <label className="flex flex-col-reverse w-auto bg-gray-700 p-4 rounded-md" htmlFor="iphone">
                     <span className="text-center text-primary-100 font-bold mt-2">iOS</span>
-                    <img width="100" src={ios.src} alt="iOS/Iphone" />
+                    <img width="60" src={ios.src} alt="iOS/Iphone" />
                   </label>
 
                   <input required className="mt-4 w-full" type="radio" id="iphone" name="device" />
@@ -82,7 +82,7 @@ const Home: FC = (): JSX.Element => {
 
             <Button
               onClick={() => {
-                // setShowUrl(true)
+                setShowUrl(true)
               }}
               className="mt-4 bg-accent pointer-events-auto outline-none focus:outline-none hover:bg-accent-hover duration-200 focus:bg-accent-hover focus:ring-2 focus:ring-offset-gray-700 focus:ring-indigo-500">
                 See my project 💖
