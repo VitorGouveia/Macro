@@ -2,7 +2,7 @@
   "private": true,
   "name": "macro",
   "description": "An application to make developing websites and web applications easier.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Vitor Gouveia",
   "main": "app/background.js",
   "scripts": {
