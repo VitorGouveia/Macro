@@ -1,38 +1,20 @@
-<p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
+<div align="center">
+  <h1>Macro</h1>
+  <p align="center">An "emulator" that displays how your app would look like in other devices</p>
+</div>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61664367/131240433-8171687a-3d7f-4a87-a7c8-4d06f2f79f45.gif">
+</p>
 
 ## Usage
+  - Open the app
+  - Put the url of your project
+  - Enjoy!
 
-### Create an App
 
-```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript-tailwindcss
+## Developing
+  - Install the dependencies with `yarn`
+  - Run the app in development mode with `yarn dev`
 
-# with yarn
-$ yarn create nextron-app my-app --example with-typescript-tailwindcss
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
-```
-
-### Install Dependencies
-
-```
-$ cd my-app
-
-# using yarn or npm
-$ yarn (or `npm install`)
-
-# using pnpm
-$ pnpm install --shamefully-hoist
-```
-
-### Use it
-
-```
-# development mode
-$ yarn dev (or `npm run dev` or `pnpm run dev`)
-
-# production build
-$ yarn build (or `npm run build` or `pnpm run build`)
-```
+<sub>the app has hot reload buit-in</sub>
