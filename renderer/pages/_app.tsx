@@ -4,7 +4,7 @@ import { AppProps } from 'next/app';
 import { useRouter } from "next/router"
 import { Button } from "../components/Button"
 
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const { reload } = useRouter()
