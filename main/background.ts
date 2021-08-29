@@ -1,4 +1,4 @@
-import { app } from 'electron';
+import { app, BrowserWindow, ipcMain, screen } from 'electron';
 import serve from 'electron-serve';
 import { createWindow } from './helpers';
 
@@ -19,7 +19,10 @@ if (isProd) {
     x: 810,
     y: 0,
     autoHideMenuBar: true,
-    alwaysOnTop: true
+    webPreferences: {
+      nodeIntegration: true
+    }
+    // alwaysOnTop: true
   });
 
   mainWindow.webContents.session.webRequest.onHeadersReceived(
@@ -40,9 +43,25 @@ if (isProd) {
   } else {
     const port = process.argv[2];
     await mainWindow.loadURL(`http://localhost:${port}`);
-    mainWindow.webContents.openDevTools();
   }
+  
+  ipcMain.on("renderApp", async (_, {deviceUrl}) => {
+    const deviceWindow = createWindow("main", {
+      width: 50,
+      height: screen.getPrimaryDisplay().workAreaSize.height,
+      transparent: true,
+      autoHideMenuBar: true,
+    })
+  
+    if (isProd) {
+      await deviceWindow.loadURL(`app://.${deviceUrl}/.html`);
+    } else {
+      const port = process.argv[2];
+      await deviceWindow.loadURL(`http://localhost:${port}${deviceUrl}`);
+    }
+  })
 })();
+
 
 app.on('window-all-closed', () => {
   app.quit();
