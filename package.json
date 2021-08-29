@@ -3,7 +3,7 @@
   "name": "macro",
   "description": "An application to make developing websites and web applications easier.",
   "version": "1.0.0",
-  "author": "Vitor Gouveia",
+  "author": "Vitor Gouveia <vitor.gouveia@aluno.etecjrm.com.br>",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
