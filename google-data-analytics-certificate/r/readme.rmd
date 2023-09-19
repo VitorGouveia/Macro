@@ -1,0 +1,23 @@
+# R Markdown
+
+This is R Markdown and now I can use R
+NOw ima create a good chart
+
+```{r loading packages, echo=FALSE, results=FALSE, message=FALSE, warning=FALSE}
+library("Tmisc")
+library("here")
+library("skimr")
+library("janitor")
+
+library("tidyr")
+library("dplyr")
+library("palmerpenguins")
+library("ggplot2")
+```
+
+```{r creating chart, out.width="100%"}
+data2 <- penguins %>%
+  drop_na()
+
+ggplot(data=data2) + geom_point(mapping=aes(x=body_mass_g, y=flipper_length_mm, color=species)) + facet_wrap(~sex) + theme(panel.background = element_rect(fill = "gray"))
+```
