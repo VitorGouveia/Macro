@@ -1,0 +1,16 @@
+{
+  "name": "readjs",
+  "version": "1.0.0",
+  "description": "A library that reads markdown files and checks if all links point to valid websites",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.mjs",
+    "test": "node --test test.js",
+    "start": "node index.mjs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
+}
