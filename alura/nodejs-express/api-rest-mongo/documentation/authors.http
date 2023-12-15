@@ -1,0 +1,29 @@
+@baseURL = http://localhost:3333/v1
+@id = 6563b5c30671791e1663b461
+
+### Creating author
+POST {{baseURL}}/authors
+Content-Type: application/json
+
+{
+}
+
+### Listing authors
+GET {{baseURL}}/authors?page=1&size=10
+Content-Type: application/json
+
+### List one author
+GET {{baseURL}}/authors/{{id}}
+Content-Type: application/json
+
+### Update author
+PUT {{baseURL}}/authors/{{id}}
+Content-Type: application/json
+
+{
+  "name": "vitor"
+}
+
+### Delete author
+DELETE {{baseURL}}/authors/{{id}}
+Content-Type: application/json

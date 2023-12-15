@@ -1,0 +1,35 @@
+@baseURL = http://localhost:3333/v1
+@id = 6563bd0a843f6be08e4f976e
+
+### Creating Book
+POST {{baseURL}}/books
+Content-Type: application/json
+
+{
+  "title": "Colhendo feedback dos usuários",
+  "authorId": "6563b5c30671791e1663b461"
+}
+
+### Listing Books
+GET {{baseURL}}/books?page=2&size=1
+Content-Type: application/json
+
+### Listing Books
+GET {{baseURL}}/books/search?title=Liv&author=dlsjkfja&page=1&size=10
+Content-Type: application/json
+
+### List one Book
+GET {{baseURL}}/books/{{id}}
+Content-Type: application/json
+
+### Update Book
+PUT {{baseURL}}/books/{{id}}
+Content-Type: application/json
+
+{
+  "pages": 100
+}
+
+### Delete Book
+DELETE {{baseURL}}/books/{{id}}
+Content-Type: application/json

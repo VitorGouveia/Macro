@@ -1,0 +1,21 @@
+{
+  "name": "api-rest-mongo",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "18.18.1"
+  },
+  "description": "A REST API built with Express.js and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --watch --test tests/*.js",
+    "dev": "node --watch index.js",
+    "start": "node --use_strict index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
+  }
+}

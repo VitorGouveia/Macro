@@ -1,0 +1,17 @@
+{
+  "name": "http",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Server using spdy and HTTP/2",
+  "main": "http2-server.js",
+  "scripts": {
+    "start": "node http2-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "spdy": "^4.0.2"
+  }
+}
